@@ -49,7 +49,8 @@ class GardenManager:
             w = water
             raise WaterError(f"{name}: Water level {w} is too high (max 10)\n")
         elif (not (sun >= 2 and sun <= 12)):
-            raise GardenError("Caught GardenError: Not enough water in tank\n")
+            s = sun
+            raise WaterError(f"Error: Sunlight hours {s} is too low (min 2)\n")
         else:
             print(f"{name}: healthy! (water: {water}, sun: {sun})")
 
@@ -62,6 +63,7 @@ class GardenManager:
 class Garden:
     def __init__(self, manager):
         self.list_plants = []
+        self.manager = manager
 
 
 class Plant:
@@ -73,7 +75,7 @@ class Plant:
 
 class Main:
     @staticmethod
-    def main():
+    def test_garden_management():
         print("=== Garden Management System ===\n")
         try:
             print("Adding plants to garden...")
@@ -111,4 +113,4 @@ class Main:
         print("Garden management system test complete!")
 
 
-Main.main()
+Main.test_garden_management()

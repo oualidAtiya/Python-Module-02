@@ -24,7 +24,7 @@ class WaterError(GardenError):
 
 class Main:
     @staticmethod
-    def main():
+    def test_custom_errors():
         print("=== Custom Garden Errors Demo ===\n")
         try:
             print("Testing PlantError...")
@@ -51,4 +51,4 @@ class Main:
         print("All custom error types work correctly!")
 
 
-Main.main()
+Main.test_custom_errors()
